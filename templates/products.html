@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h2>Add Product</h2>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Product Name" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <input type="number" name="stock" placeholder="Stock" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Product List</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Name</th><th>Price</th><th>Stock</th>
+        </tr>
+        {% for p in products %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.price }}</td>
+            <td>{{ p.stock }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><a href="/dashboard">Back</a>
+</body>
+</html>
